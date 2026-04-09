@@ -4,13 +4,10 @@
 {
 	auto_https off
 	admin off
-
-	servers {
-		trusted_proxies static private_ranges
-	}
 }
 
-0.0.0.0:1234 {
+:1234 {
+	bind 0.0.0.0
 	root * .
 
 	# Add CORS headers to allow Maputnik to access resources (needed in Codespaces)
