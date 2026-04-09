@@ -28,5 +28,9 @@ sudo mv /tmp/pmtiles /usr/local/bin/pmtiles
 sudo chmod +x /usr/local/bin/pmtiles
 rm /tmp/pmtiles.tar.gz
 
+# Configure git safe.directory so VS Code's Source Control panel works in Codespaces
+echo "Configuring git..."
+git config --global --add safe.directory /workspaces/standalone_web_maps_foss4g2025
+
 echo "Setup complete! Caddy and PMTiles CLI are installed."
 
