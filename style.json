@@ -13,6 +13,13 @@
       "type": "geojson",
       "cluster": false,
       "data": "sources/te_ara_hura.geojson"
+    },
+    "terrain": {
+      "type": "raster-dem",
+      "url": "pmtiles://sources/waiheke_island_terrain.pmtiles",
+      "tileSize": 256,
+      "encoding": "terrarium",
+      "attribution": "<a href=\"https://mapterhorn.com/attribution\">Mapterhorn</a>"
     }
   },
   "layers": [
@@ -41,6 +48,18 @@
       },
       "layout": {
         "visibility": "visible"
+      }
+    },
+    {
+      "id": "hillshade",
+      "type": "hillshade",
+      "source": "terrain",
+      "paint": {
+        "hillshade-accent-color": "hsla(0, 0%, 0%, 0.1)",
+        "hillshade-exaggeration": 0.5,
+        "hillshade-highlight-color": "hsla(0, 0%, 100%, 0.1)",
+        "hillshade-illumination-direction": 315,
+        "hillshade-shadow-color": "hsla(0, 0%, 0%, 0.5)"
       }
     },
     {
